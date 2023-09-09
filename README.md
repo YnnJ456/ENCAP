@@ -19,7 +19,6 @@ The only main program is main_predict.py
 * output file
   * binary_vector.csv -- The 0 or 1 predictions.
   * probability.csv -- the probability predictions.
-  * test_score.csv -- the score of acc, pre, recall, fi_score, auc, spe and mcc.
 
 
 When dataset = 'DS1' will use DS1's models, features and normalize scaler.
@@ -54,5 +53,4 @@ topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict, modelNameList=
 topObj.loadData(testNegFastaPath=testNegFastaPath, testPosFastaPath=testPosFastaPath)
 topObj.featureEncode()
 topObj.doPredict()
-scoreDf = topObj.doScoring()  # You can turn off doScoring(), if you don't need to.
 ```
