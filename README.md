@@ -53,6 +53,7 @@ The following dictionary specificies the fasta file for prediction. They keys of
 0 = negative sequences
 1 = positive sequences
 -1 = sequences of unknown label
+
 'None' can be used if the corresponding file is not provided.
 
 ```py
