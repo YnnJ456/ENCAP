@@ -56,7 +56,6 @@ inputPathList = ['../data/mlData/DS1/test_neg.FASTA', '../data/mlData/DS1/test_p
 
 
 Here is the code snippet in main_predict.py, for which parameters are set and is ready to be excecuted.
-If your data have label, please set True in havelabel, else set False
 
 ```py
 # If your data have label, please set True in havelabel, else set False
