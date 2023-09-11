@@ -1,8 +1,8 @@
 # TOP-TTCA
 TOP-TTCA: Prediction of Tumor T Cell Antigens Using Two-stage Optimization of Machine Learning Models 
 
-# Abstract
-Cancer immunotherapy enhances the body’s natural immune system to combat cancer, offering the advantage of lowered side effects compared to traditional treatments because of its high selectivity and efficacy. Utilizing computational methods to identify tumor T cell antigens (TTCAs) is valuable in unraveling biological mechanisms and enhancing the effectiveness of immunotherapy. In this study, we present TOP-TTCA, a machine learning predictor based on two-stage optimization. Sequences are encoded as a feature vector of 4349 entries based on 57 feature types, followed by optimization of feature subset and machine learning models in the first and the second stages of the proposed pipeline, respectively. Benchmark evaluations show that TOP-TTCA generates 4.8% and 13.5% improvements in Matthew’s correlation coefficient (MCC) over the state-of-the-art methods on two popular TTCA data sets, respectively. For the third test data set of 71 experimentally validated TTCAs from the literature, our best model yields prediction accuracy of 0.873, achieving improvements ranging from 12% to 25.7% compared to three state-of-the-art methods. The optimized feature subsets are primarily composed of physicochemical properties, with several features specifically related to hydrophobicity and amphiphilicity.
+# Description
+This is the source code of TOP-TTCA, a machine learning predictor for tumor T cell antigen based on two-stage optimization (manuscript under review). The first stage is the optimization of feature vector, and the second stage is the optimization of machine learning models. The trained models are included in this package, facilitating prediction on a given data set.
 
 # Install
 Requiremenets:
@@ -12,18 +12,18 @@ Packages
 * Install required packages using `pip install -r requirements.txt`
 
 # Usage
-The only main program is main_predict.py
+Modify main_predict.py for your data set in fasta format
 * Input file
   * Fasta file
   
 * output file
-  * binary_vector.csv -- The 0 or 1 predictions.
-  * probability.csv -- the probability predictions.
+  * binary_vector.csv -- The prediction output in binary format (1 for positive and 0 for negative)
+  * probability.csv -- The prediction probability estimate
 
 
-When dataset = 'DS1' will use DS1's models, features and normalize scaler.
+When dataset = 'DS1', the program will use DS1's models, features and normalize scaler to process data and perform prediction.
 
-When dataset = 'DS2' will use DS2's models, features and normalize scaler.
+When dataset = 'DS2' , the program will use DS2's models, features and normalize scaler to process data and perform prediction.
 ```py
 # If you want to use different model, you can change dataset
 dataset = 'DS1'
@@ -35,18 +35,20 @@ elif dataset == 'DS2':
 
 ```py
 # Path setting
-pathDict = {'paramPath': f'../data/param/{dataset}/',  # This path should have featureTypeDict.pkl and robust.pkl
-            'saveCsvPath': '../data/mlData/new_data/',  # Your encoded data will save in this path
-            'modelPath': f'../data/finalModel/{dataset}/',  # This path should have catboost, et, gbc models. ex: catboost_final.pkl
+pathDict = {'paramPath': f'../data/param/{dataset}/',  # This path should contains featureTypeDict.pkl and robust.pkl, which are already included
+            'saveCsvPath': '../data/mlData/new_data/',  # Encoded data will be automatically saved in this directory
+            'modelPath': f'../data/finalModel/{dataset}/',  # This is where we put trained ML models such as catboost, et, gbc models, for example, the file catboost_final.pkl refers to the catboost model.
             'scorePath': '../data/mlScore/'}  # Your score will save in this path
 ```
 
-If you don't have positive data or negative data, you can input None
+If you do not have positive data or negative data, you can input None
 ```py
 # Input your FASTA file, the example file can find in data/mlData/DS1/test_neg.FASTA
 testNegFastaPath = '../data/mlData/DS1/test_neg.FASTA'
 testPosFastaPath = '../data/mlData/DS1/test_pos.FASTA'
 ```
+
+Here is the code in main_predict.py of which parameters are set and the program is ready to be excecuted.
 
 ```py
 topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict, modelNameList=['catboost', 'et', 'gbc'])
