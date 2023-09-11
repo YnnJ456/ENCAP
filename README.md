@@ -50,8 +50,8 @@ pathDict = {'paramPath': f'../data/param/{dataset}/',  # The path by default con
 
 The following dictionary specificies the fasta file for prediction. They keys of 0, 1, and -1 stand for negative, positive, and unknown label of the sequences in a fasta file.
 
-0 = negative sequences
-1 = positive sequences
+0 = negative sequences; 
+1 = positive sequences; 
 -1 = sequences of unknown label
 
 'None' can be used if the corresponding file is not provided.
