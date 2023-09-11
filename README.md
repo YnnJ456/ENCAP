@@ -49,6 +49,7 @@ pathDict = {'paramPath': f'../data/param/{dataset}/',  # This path should have f
 ```
 
 If you do not have positive data or negative data, you can input None
+
 0 = Negative Data, 1 = Positive Data, -1 = No Label Data
 
 ```py
@@ -59,6 +60,8 @@ inputDataDict = {0: '../data/mlData/DS1/test_neg.FASTA',
 ```
 
 Here is the code in main_predict.py of which parameters are set and the program is ready to be excecuted.
+
+If your data have label, please set True in havelabel, else set False
 
 ```py
 # If your data have label, please set True in havelabel, else set False
