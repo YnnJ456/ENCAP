@@ -18,7 +18,14 @@ Modify main_predict.py for your data set in fasta format
   
 * output file
   * binary_vector.csv -- The prediction output in binary format (1 for positive and 0 for negative)
+    
+    ![image](https://github.com/YnnJ456/TOP-TTCA/assets/95170485/3f50bd44-ff22-440e-b94d-b7a06ff75768)
+
+
   * probability.csv -- The prediction probability estimate
+    
+    ![image](https://github.com/YnnJ456/TOP-TTCA/assets/95170485/51b32ee7-80f6-4601-b47e-91486876fd4a)
+
 
 
 When dataset = 'DS1', the program will use DS1's models, features and normalize scaler to process data and perform prediction.
