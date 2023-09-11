@@ -35,24 +35,28 @@ elif dataset == 'DS2':
 
 ```py
 # Path setting
-pathDict = {'paramPath': f'../data/param/{dataset}/',  # This path should contains featureTypeDict.pkl and robust.pkl, which are already included
-            'saveCsvPath': '../data/mlData/new_data/',  # Encoded data will be automatically saved in this directory
-            'modelPath': f'../data/finalModel/{dataset}/',  # This is where we put trained ML models such as catboost, et, gbc models, for example, the file catboost_final.pkl refers to the catboost model.
-            'scorePath': '../data/mlScore/'}  # Your score will save in this path
+pathDict = {'paramPath': f'../data/param/{dataset}/',  # This path should have featureTypeDict.pkl and robust.pkl
+            'saveCsvPath': '../data/mlData/new_data/',  # Your encoded data will save in this path
+            'modelPath': f'../data/finalModel/{dataset}/',  # This path should have catboost, et, gbc models. ex: catboost_final.pkl
+            'outputPath': '../data/output/'}  # Your prediction will save in this path
 ```
 
 If you do not have positive data or negative data, you can input None
+0 = Negative Data, 1 = Positive Data, -1 = No Label Data
+
 ```py
 # Input your FASTA file, the example file can find in data/mlData/DS1/test_neg.FASTA
-testNegFastaPath = '../data/mlData/DS1/test_neg.FASTA'
-testPosFastaPath = '../data/mlData/DS1/test_pos.FASTA'
+inputDataDict = {0: '../data/mlData/DS1/test_neg.FASTA',
+                 1: '../data/mlData/DS1/test_pos.FASTA',
+                 -1: None}
 ```
 
 Here is the code in main_predict.py of which parameters are set and the program is ready to be excecuted.
 
 ```py
-topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict, modelNameList=['catboost', 'et', 'gbc'])
-topObj.loadData(testNegFastaPath=testNegFastaPath, testPosFastaPath=testPosFastaPath)
+# If your data have label, please set True in havelabel, else set False
+topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict, haveLabel=True)
+topObj.loadData(inputDataDict=inputDataDict)
 topObj.featureEncode()
 topObj.doPredict()
 ```
