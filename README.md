@@ -55,9 +55,7 @@ The following dictionary specificies the fasta file for prediction. They keys of
 
 ```py
 # Input your FASTA file, the example file can be found in data/mlData/DS1/test_neg.FASTA
-inputDataDict = {0: '../data/mlData/DS1/test_neg.FASTA',
-                 1: '../data/mlData/DS1/test_pos.FASTA',
-                 -1: None}
+inputPathList = ['../data/mlData/DS1/test_neg.FASTA', '../data/mlData/DS1/test_pos.FASTA']
 ```
 
 
