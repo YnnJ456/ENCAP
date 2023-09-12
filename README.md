@@ -58,8 +58,7 @@ inputPathList = ['../data/mlData/DS1/test_neg.FASTA', '../data/mlData/DS1/test_p
 Here is the code snippet in main_predict.py, for which parameters are set and is ready to be excecuted.
 
 ```py
-# If your data have label, please set True in havelabel, else set False
-topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict, haveLabel=True)
+topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict)
 topObj.loadData(inputDataDict=inputDataDict)
 topObj.featureEncode()
 topObj.doPredict()
