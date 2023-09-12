@@ -46,7 +46,7 @@ pathDict = {'paramPath': f'../data/param/{dataset}/',  # The path by default con
 ```
 
 
-Specify one or more fasta files in the 'inputPathList' parameter.
+Specify one or more fasta files in the 'inputPathList' parameter. Sequences from these fasta files will be concatenated for prediction, and prediction results will be written to the default output files, binary_vector.csv and probability.csv.
 
 ```py
 # Input your FASTA file, the example file can be found in data/mlData/DS1/test_neg.FASTA
@@ -55,7 +55,7 @@ inputPathList = ['../data/mlData/DS1/test_neg.FASTA', '../data/mlData/DS1/test_p
 
 
 
-Here is the code snippet in main_predict.py, for which parameters are set and is ready to be excecuted.
+Here is the code snippet in main_predict.py. We already set the parameters and the program is ready to be excecuted.
 
 ```py
 topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict)
