@@ -14,7 +14,7 @@ Packages
 # Usage
 Modify main_predict.py for your data set in fasta format
 * Input file
-  * Fasta file
+  * One or more files in Fasta format (described below)
   
 * output file
   * binary_vector.csv -- The prediction output in binary format (1 for positive and 0 for negative)
