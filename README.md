@@ -2,7 +2,7 @@
 TOP-TTCA: Prediction of Tumor T Cell Antigens Using Two-stage Optimization of Machine Learning Models 
 
 # Description
-This is the source code of TOP-TTCA, a machine learning predictor for tumor T cell antigen based on two-stage optimization (manuscript under review). The first stage is the optimization of feature vector, and the second stage is the optimization of machine learning models. The trained models are included in this package, facilitating prediction on a given data set.
+This is the source code of TOP-TTCA, a machine learning predictor for tumor T cell antigen based on two-stage optimization (manuscript under review). The first stage is the optimization of feature vector, and the second stage is the optimization of machine learning models. The trained models are also included in this package, facilitating prediction on a given data set.
 
 # Installation
 Requiremenets:
