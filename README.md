@@ -1,8 +1,8 @@
-# TOPTTCA
-TOPTTCA: Prediction of Tumor T Cell Antigens Using Two-stage Optimization of Machine Learning Models 
+# TOTTCA
+TOTTCA: Prediction of Tumor T Cell Antigens Using Two-stage Optimization of Machine Learning Models 
 
 # Description
-This is the source code of TOPTTCA, a machine learning predictor for tumor T cell antigen based on two-stage optimization (manuscript under review). The first stage is the optimization of feature vector, and the second stage is the optimization of machine learning models. The trained models are also included in this package, facilitating prediction on a given data set.
+This is the source code of TOTTCA, a machine learning predictor for tumor T cell antigen based on two-stage optimization (manuscript under review). The first stage is the optimization of feature vector, and the second stage is the optimization of machine learning models. The trained models are also included in this package, facilitating prediction on a given data set.
 
 # Installation
 Requiremenets:
@@ -19,11 +19,11 @@ Modify main_predict.py for your data set in fasta format
 * output file
   * binary_vector.csv -- The prediction output in binary format (1 for positive and 0 for negative)
     
-    ![image](https://github.com/YnnJ456/TOP-TTCA/assets/95170485/89e9b8ac-c49a-465d-8119-069b7852807a)
+    ![image](https://github.com/YnnJ456/TOTTCA/assets/95170485/89e9b8ac-c49a-465d-8119-069b7852807a)
 
   * probability.csv -- The prediction probability estimate
     
-    ![image](https://github.com/YnnJ456/TOP-TTCA/assets/95170485/c03deada-58cc-4c1f-814f-301f9362fa21)
+    ![image](https://github.com/YnnJ456/TOTTCA/assets/95170485/c03deada-58cc-4c1f-814f-301f9362fa21)
 
 When dataset = 'DS1', the program will use models trained on DS1, corresponding features and their normalization scaler to process data and perform prediction.
 
@@ -58,8 +58,8 @@ inputPathList = ['../data/mlData/DS1/test_neg.FASTA', '../data/mlData/DS1/test_p
 Here is the code snippet in main_predict.py. We already set the parameters and the program is ready to be excecuted.
 
 ```py
-topObj = TOP_TTCA_Predict(model_use=model_use, pathDict=pathDict)
-topObj.loadData(inputDataDict=inputDataDict)
-topObj.featureEncode()
-topObj.doPredict()
+toObj = TOTTCA_Predict(model_use=model_use, pathDict=pathDict)
+toObj.loadData(inputDataDict=inputDataDict)
+toObj.featureEncode()
+toObj.doPredict()
 ```
