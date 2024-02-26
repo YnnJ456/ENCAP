@@ -58,8 +58,8 @@ inputPathList = ['../data/mlData/DS1/test_neg.FASTA', '../data/mlData/DS1/test_p
 Here is the code snippet in main_predict.py. We already set the parameters and the program is ready to be excecuted.
 
 ```py
-toObj = EsmTTCA_Predict(model_use=model_use, pathDict=pathDict)
-toObj.loadData(inputDataDict=inputDataDict)
-toObj.featureEncode()
-toObj.doPredict()
+esmObj = EsmTTCA_Predict(model_use=model_use, pathDict=pathDict)
+esmObj.loadData(inputDataDict=inputDataDict)
+esmObj.featureEncode()
+esmObj.doPredict()
 ```
